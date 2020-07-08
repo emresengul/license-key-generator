@@ -13,9 +13,9 @@ npm install license-key-generator
 const Generator = require("license-key-generator");
 
 const options = {
-    type: "number", // default "random"
-    length: 25, // default 16
-    group: 5, // default 4
+    type: "random", // default "random"
+    length: 16, // default 16
+    group: 4, // default 4
     split: "-", // default "-"
     splitStatus: true // default true
 }
@@ -24,6 +24,8 @@ code.get((err,code)=>{
     if(err) return console.error(err)
     console.log("code=",code);
 })
+
+CONSOLE :  2X3I-EQ9N-OILF-KA5U
 ````
 # OPTIONS
 | type                     |  length   |     group |   split |   splitStatus |
