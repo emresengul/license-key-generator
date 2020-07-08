@@ -9,16 +9,17 @@
   "keywords": [
     "license",
     "code",
-    "generator"
+    "generator",
+    "steam"
   ],
   "author": "emresengul",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emresengul/random-key.git"
+    "url": "git+https://github.com/emresengul/license-key-generator.git"
   },
   "bugs": {
-    "url": "https://github.com/emresengul/random-key/issues"
+    "url": "https://github.com/emresengul/license-key-generator/issues"
   },
-  "homepage": "https://github.com/emresengul/random-key#readme"
+  "homepage": "https://github.com/emresengul/license-key-generator#readme"
 }
