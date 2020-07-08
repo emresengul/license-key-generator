@@ -1,10 +1,19 @@
 class Generator{
     constructor(options){
-        this.type = options.type || "random";
-        this.length = options.length || 16;
-        this.group = options.group || 4;
-        this.splitStatus = options.splitStatus==false?false:true;
-        this.splitItem = options.split || "-";
+        if(options){
+            this.type = options.type || "random";
+            this.length = options.length || 16;
+            this.group = options.group || 4;
+            this.splitStatus = options.splitStatus==false?false:true;
+            this.splitItem = options.split || "-";
+        }else{
+            this.type = "random";
+            this.length =  16;
+            this.group =  4;
+            this.splitStatus = true;
+            this.splitItem = "-";
+        }
+
     }
     async get(callback){
         let code = await this.random(this.type,this.length,this.group);

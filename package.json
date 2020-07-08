@@ -1,5 +1,5 @@
 {
-  "name": "random-key",
+  "name": "license-key-generator",
   "version": "1.0.0",
   "description": "Random code generator for game,license etc..",
   "main": "index.js",
@@ -12,5 +12,13 @@
     "generator"
   ],
   "author": "emresengul",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emresengul/random-key.git"
+  },
+  "bugs": {
+    "url": "https://github.com/emresengul/random-key/issues"
+  },
+  "homepage": "https://github.com/emresengul/random-key#readme"
 }
