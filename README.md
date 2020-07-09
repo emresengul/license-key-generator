@@ -20,14 +20,27 @@ const options = {
     splitStatus: true // default true
 }
 const code = new Generator(options);
-code.get((err,code)=>{
-    if(err) return console.error(err)
+code.get((error,code)=>{
+    if(error) return console.error(error)
     console.log("code=",code);
 })
 
-CONSOLE :  2X3I-EQ9N-OILF-KA5U
+CONSOLE: 8TBY-B44M-UXXG-U0QC
 ````
 # OPTIONS
-| type                     |  length   |     group |   split |   splitStatus |
-| ------------------------ | :-------: | --------: | ------: | ------------: |
-| number, random or letter | NON-LIMIT | NON-LIMIT | charset | true or false |
+| type                     |   length    |       group |   split |   splitStatus |
+| ------------------------ | :---------: | ----------: | ------: | ------------: |
+| number, random or letter | 1-NON-LIMIT | 1-NON-LIMIT | charset | true or false |
+
+# ERRORS
+| status |    message    |
+| ------ | :-----------: |
+| false  | Error Message |
+````
+error parameters is object. 
+Example :
+{
+    status: false,
+    message: "group must be greater than 0"
+}
+````

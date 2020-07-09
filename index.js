@@ -13,13 +13,33 @@ class Generator{
             this.splitStatus = true;
             this.splitItem = "-";
         }
-
     }
     async get(callback){
-        let code = await this.random(this.type,this.length,this.group);
         let err = null;
-        if (typeof code !== "string") err = {status: false,message: "Failed to generate Random code."}
+        let code = null;
+        if(typeof this.length !== "number")  err = this.createError("the length must be number");
+        if(this.length <=0) err = this.createError("length must be greater than 0")
+        if(this.splitStatus){
+            if(typeof this.group !== "number")  err = this.createError("the group must be number")
+            if(this.group <=0) err = this.createError("group must be greater than 0")
+        }
+        if( !err &&(this.type === "random" || this.type === "number" || this.type === "letter")) {
+            try{
+                code = await this.random(this.type,this.length,this.group);
+            }
+            catch(error){
+                err.status = false;
+                err.message = error.message;
+            }
+            if (typeof code !== "string") err = this.createError("Failed to generate Random code")
+        }
+        else{
+            if(!err) err = this.createError("type must be number, letter or random")
+        }
         callback(err,code)
+    }
+    createError(message){
+        return {status: false,message:message}
     }
     random(type,length,group){
         let list = [];
